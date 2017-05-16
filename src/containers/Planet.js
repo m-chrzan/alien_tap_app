@@ -7,8 +7,15 @@ let mapStateToProps = ({game: {planets}}, {id}) => {
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {}
+let mapDispatchToProps = (dispatch, {id}) => {
+  return {
+    onKill: () => {
+      dispatch({
+        type: 'KILL',
+        id: id
+      })
+    }
+  }
 }
 
 export const Planet = connect(mapStateToProps, mapDispatchToProps)(PlanetView)
