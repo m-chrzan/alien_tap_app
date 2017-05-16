@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import { View, Button } from 'react-native'
+import { View, Button, Alert } from 'react-native'
 import { TimeBar } from '../containers/TimeBar'
 import { GameField } from '../containers/GameField'
 import { GameStats } from '../containers/GameStats'
@@ -32,7 +32,18 @@ export class AppView extends Component {
       this.props.tick()
     } else {
       this.stopTimer()
+      this.alertEndOfGame()
     }
+  }
+
+  alertEndOfGame() {
+    Alert.alert(
+      'Game over!',
+      'Final score: ' +
+      (this.props.aliensKilled - this.props.dudesKilled),
+      [ { text: 'Play again', onPress: () => this.startGame() } ],
+      { cancelable: false }
+    )
   }
 
   respawn = () => {

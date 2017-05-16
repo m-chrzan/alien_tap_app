@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { AppView } from '../components/AppView'
 
-let mapStateToProps = ({game: {planets, timeLeft}}) => {
-  return { planets, timeLeft }
+let mapStateToProps = ({game: {planets, timeLeft, aliensKilled, dudesKilled}}) => {
+  return { planets, timeLeft, aliensKilled, dudesKilled }
 }
 
 let mapDispatchToProps = (dispatch) => {
