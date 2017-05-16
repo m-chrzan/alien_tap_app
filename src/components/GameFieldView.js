@@ -1,9 +1,17 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
+import { Planet } from '../containers/Planet'
 
-export const GameFieldView = () => {
+export const GameFieldView = ({planets}) => {
   return (
     <View>
+      {
+        planets.map((planet, id) => {
+          return (
+            <Planet key={id} id={id}></Planet>
+          )
+        })
+      }
     </View>
   )
 }

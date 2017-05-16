@@ -1,9 +1,21 @@
 import { combineReducers } from 'redux'
 
-const initialState = {}
+const initialState = {
+  planets: [
+    {}, {}, {}, {}, {}
+  ],
+}
 
 let game = (state = initialState, action) => {
-  return state
+  switch (action.type) {
+    case 'INITIALIZE_GAME':
+      return {
+        ...initialState,
+        planets: action.planets,
+      }
+    default:
+      return state
+  }
 }
 
 export const mainReducer = combineReducers({game})

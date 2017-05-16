@@ -2,7 +2,9 @@ import { connect } from 'react-redux'
 import { GameFieldView } from '../components/GameFieldView'
 
 let mapStateToProps = ({game: {planets}}) => {
-  return {}
+  return {
+    planets
+  }
 }
 
 let mapDispatchToProps = (dispatch) => {

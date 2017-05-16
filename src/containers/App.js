@@ -1,12 +1,19 @@
 import { connect } from 'react-redux'
 import { AppView } from '../components/AppView'
 
-let mapStateToProps = () => {
-  return {}
+let mapStateToProps = ({game: {planets}}) => {
+  return { planets }
 }
 
 let mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    initializeGame: (planets) => {
+      dispatch({
+        type: 'INITIALIZE_GAME',
+        planets: planets
+      })
+    }
+  }
 }
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(AppView)
