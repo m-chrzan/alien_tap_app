@@ -4,6 +4,7 @@ import { View, Button, Alert } from 'react-native'
 import { TimeBar } from '../containers/TimeBar'
 import { GameField } from '../containers/GameField'
 import { GameStats } from '../containers/GameStats'
+import styles from '../styles/styles'
 
 export class AppView extends Component {
   constructor(props) {
@@ -68,6 +69,7 @@ export class AppView extends Component {
     return (
       <View >
         <TimeBar></TimeBar>
+        <View style={styles.container}>
           <GameField></GameField>
           <GameStats></GameStats>
           <Button title="Respawn" onPress={this.respawn}></Button>
