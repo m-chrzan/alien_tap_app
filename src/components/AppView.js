@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import { View } from 'react-native'
+import { View, Button } from 'react-native'
 import { TimeBar } from '../containers/TimeBar'
 import { GameField } from '../containers/GameField'
 import { GameStats } from '../containers/GameStats'
@@ -16,6 +16,10 @@ export class AppView extends Component {
 
   startGame() {
     this.props.initializeGame(this.generateRandomPlanets())
+  }
+
+  respawn = () => {
+    this.props.respawn(this.generateRandomPlanets())
   }
 
   generateRandomPlanets() {
@@ -38,6 +42,7 @@ export class AppView extends Component {
         <TimeBar></TimeBar>
           <GameField></GameField>
           <GameStats></GameStats>
+          <Button title="Respawn" onPress={this.respawn}></Button>
         </View>
       </View>
     )

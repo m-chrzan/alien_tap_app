@@ -12,6 +12,12 @@ let mapDispatchToProps = (dispatch) => {
         type: 'INITIALIZE_GAME',
         planets: planets
       })
+    },
+    respawn: (planets) => {
+      dispatch({
+        type: 'RESPAWN',
+        planets: planets
+      })
     }
   }
 }

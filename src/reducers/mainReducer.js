@@ -13,6 +13,11 @@ let game = (state = initialState, action) => {
         ...initialState,
         planets: action.planets,
       }
+    case 'RESPAWN':
+      return {
+        ...state,
+        planets: action.planets
+      }
     default:
       return state
   }
