@@ -16,6 +16,23 @@ export class AppView extends Component {
 
   startGame() {
     this.props.initializeGame(this.generateRandomPlanets())
+    this.startTimer()
+  }
+
+  startTimer() {
+    this.timer = setInterval(this.onInterval, 100)
+  }
+
+  stopTimer() {
+    clearInterval(this.timer)
+  }
+
+  onInterval = () => {
+    if (this.props.timeLeft > 0) {
+      this.props.tick()
+    } else {
+      this.stopTimer()
+    }
   }
 
   respawn = () => {

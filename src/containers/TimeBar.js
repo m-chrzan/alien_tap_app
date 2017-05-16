@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { TimeBarView } from '../components/TimeBarView'
 
-let mapStateToProps = () => {
-  return {}
+let mapStateToProps = ({ game: { timeLeft } }) => {
+  return { timeLeft }
 }
 
 let mapDispatchToProps = (dispatch) => {

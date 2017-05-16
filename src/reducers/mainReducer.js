@@ -6,6 +6,7 @@ const initialState = {
   ],
   aliensKilled: 0,
   dudesKilled: 0,
+  timeLeft: 100
 }
 
 let game = (state = initialState, action) => {
@@ -43,6 +44,11 @@ let game = (state = initialState, action) => {
         }),
         aliensKilled: newAliensKilled,
         dudesKilled: newDudesKilled
+      }
+    case "TICK":
+      return {
+        ...state,
+        timeLeft: state.timeLeft - 1
       }
     default:
       return state

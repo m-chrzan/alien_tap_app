@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { AppView } from '../components/AppView'
 
-let mapStateToProps = ({game: {planets}}) => {
-  return { planets }
+let mapStateToProps = ({game: {planets, timeLeft}}) => {
+  return { planets, timeLeft }
 }
 
 let mapDispatchToProps = (dispatch) => {
@@ -17,6 +17,11 @@ let mapDispatchToProps = (dispatch) => {
       dispatch({
         type: 'RESPAWN',
         planets: planets
+      })
+    },
+    tick: () => {
+      dispatch({
+        type: 'TICK'
       })
     }
   }
