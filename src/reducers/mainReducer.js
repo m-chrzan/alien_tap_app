@@ -6,7 +6,7 @@ const initialState = {
   ],
   aliensKilled: 0,
   dudesKilled: 0,
-  timeLeft: 100
+  timeLeft: 600
 }
 
 let game = (state = initialState, action) => {

@@ -21,7 +21,7 @@ export class AppView extends Component {
   }
 
   startTimer() {
-    this.timer = setInterval(this.onInterval, 100)
+    this.timer = setInterval(this.onInterval, 50)
   }
 
   stopTimer() {
