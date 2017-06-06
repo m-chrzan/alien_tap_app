@@ -68,7 +68,7 @@ export class AppView extends Component {
 
   render() {
     return (
-      <View >
+      <View>
         <TimeBar></TimeBar>
         <View style={styles.container}>
           <GameField></GameField>

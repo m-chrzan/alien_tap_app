@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 2,
     padding: 10,
-    margin: 10
+    margin: 10,
+    display: 'flex'
   }
 })
 

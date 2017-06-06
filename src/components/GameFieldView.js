@@ -4,7 +4,7 @@ import { Planet } from '../containers/Planet'
 
 export const GameFieldView = ({planets}) => {
   return (
-    <View>
+    <View style={[{display: 'flex'}]}>
       {
         planets.map((planet, id) => {
           return (
