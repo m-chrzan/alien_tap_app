@@ -50,7 +50,7 @@ export class AppView extends Component {
     return this.props.planets.map((planet) => {
       let roll = Math.random()
       let isEmpty = roll > 0.667
-      let isDude = Math.random() > 0.333
+      let isDude = roll > 0.333
       let leftOffset = Math.floor(Math.random() * 200)
 
       return {
