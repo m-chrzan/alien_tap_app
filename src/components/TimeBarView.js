@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Dimensions } from 'react-native'
+import { View, Dimensions } from 'react-native'
 import styles from '../styles/styles'
 
 export const TimeBarView = ({timeLeft}) => {
@@ -13,7 +13,6 @@ export const TimeBarView = ({timeLeft}) => {
   }
 
   return (
-    <View style={ [styles.timeBar, { width: barWidth, backgroundColor: color }] }></View>
+    <View style={[styles.timeBar, { width: barWidth, backgroundColor: color }]} />
   )
 }
-

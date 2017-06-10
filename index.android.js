@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
-  AppRegistry,
-  View
-} from 'react-native';
+  AppRegistry
+} from 'react-native'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { App } from './src/containers/App'
@@ -11,13 +10,13 @@ import { mainReducer } from './src/reducers/mainReducer'
 let store = createStore(mainReducer)
 
 export default class AlienApp extends Component {
-  render() {
+  render () {
     return (
       <Provider store={store}>
-        <App></App>
+        <App />
       </Provider>
-    );
+    )
   }
 }
 
-AppRegistry.registerComponent('AlienApp', () => AlienApp);
+AppRegistry.registerComponent('AlienApp', () => AlienApp)

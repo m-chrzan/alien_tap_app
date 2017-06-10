@@ -1,5 +1,4 @@
-import React from 'react'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { View, Button, Alert } from 'react-native'
 import { TimeBar } from '../containers/TimeBar'
 import { GameField } from '../containers/GameField'
@@ -7,24 +6,20 @@ import { GameStats } from '../containers/GameStats'
 import styles from '../styles/styles'
 
 export class AppView extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  componentDidMount() {
+  componentDidMount () {
     this.startGame()
   }
 
-  startGame() {
+  startGame () {
     this.props.initializeGame(this.generateRandomPlanets())
     this.startTimer()
   }
 
-  startTimer() {
+  startTimer () {
     this.timer = setInterval(this.onInterval, 50)
   }
 
-  stopTimer() {
+  stopTimer () {
     clearInterval(this.timer)
   }
 
@@ -37,7 +32,7 @@ export class AppView extends Component {
     }
   }
 
-  alertEndOfGame() {
+  alertEndOfGame () {
     Alert.alert(
       'Game over!',
       'Final score: ' +
@@ -51,12 +46,12 @@ export class AppView extends Component {
     this.props.respawn(this.generateRandomPlanets())
   }
 
-  generateRandomPlanets() {
-    return planets = this.props.planets.map((planet) => {
-      let roll = Math.random();
-      let isEmpty = roll > 0.667;
-      let isDude = Math.random() > 0.333;
-      let leftOffset = Math.floor(Math.random() * 200);
+  generateRandomPlanets () {
+    return this.props.planets.map((planet) => {
+      let roll = Math.random()
+      let isEmpty = roll > 0.667
+      let isDude = Math.random() > 0.333
+      let leftOffset = Math.floor(Math.random() * 200)
 
       return {
         isEmpty: isEmpty,
@@ -66,14 +61,14 @@ export class AppView extends Component {
     })
   }
 
-  render() {
+  render () {
     return (
       <View>
-        <TimeBar></TimeBar>
+        <TimeBar />
         <View style={styles.container}>
-          <GameField></GameField>
-          <GameStats></GameStats>
-          <Button title="Respawn" onPress={this.respawn}></Button>
+          <GameField />
+          <GameStats />
+          <Button title='Respawn' onPress={this.respawn} />
         </View>
       </View>
     )

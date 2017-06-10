@@ -8,11 +8,10 @@ export const GameFieldView = ({planets}) => {
       {
         planets.map((planet, id) => {
           return (
-            <Planet key={id} id={id}></Planet>
+            <Planet key={id} id={id} />
           )
         })
       }
     </View>
   )
 }
-

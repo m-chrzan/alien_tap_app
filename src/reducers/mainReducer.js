@@ -14,7 +14,7 @@ let game = (state = initialState, action) => {
     case 'INITIALIZE_GAME':
       return {
         ...initialState,
-        planets: action.planets,
+        planets: action.planets
       }
     case 'RESPAWN':
       return {
@@ -45,7 +45,7 @@ let game = (state = initialState, action) => {
         aliensKilled: newAliensKilled,
         dudesKilled: newDudesKilled
       }
-    case "TICK":
+    case 'TICK':
       return {
         ...state,
         timeLeft: state.timeLeft - 1
