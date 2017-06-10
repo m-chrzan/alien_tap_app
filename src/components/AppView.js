@@ -67,9 +67,9 @@ export class AppView extends Component {
         <TimeBar />
         <View style={styles.container}>
           <GameField />
-          <GameStats />
-          <Button title='Respawn' onPress={this.respawn} />
         </View>
+        <GameStats />
+        <Button title='Respawn' onPress={this.respawn} />
       </View>
     )
   }
